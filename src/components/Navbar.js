@@ -1,100 +1,130 @@
+import React from "react";
 import { Link } from "react-router-dom";
+import logo from "./images/ElectroNova_logo_trial.png";
 
 function Navbar() {
 	const navbarStyle = {
-		backgroundColor: "#fff",
+		backgroundColor: "transparent",
 		padding: "20px 30px",
 		fontFamily: "Georgia, serif",
-		position: "relative",
+		position: "absolute",
+		top: "0",
+		left: "0",
+		width: "100%",
+		zIndex: "1000",
 	};
 
 	const mainLogoStyle = {
-		height: "150px",
+		height: "125px",
 		width: "auto",
-		borderRadius: "25px",
+		borderRadius: "5px",
 	};
 
 	const navLinkStyle = {
-		color: "black",
 		fontSize: "20px",
 		margin: "0 20px",
-		fontWeight: "bold",
+		color: "#fff",
+		cursor: "pointer",
 	};
 
-	const searchButtonStyle = {
-		borderRadius: "10px",
-		fontSize: "20px",
-		fontWeight: "bold",
-		height: "50px",
-		width: "auto",
+	const iconStyle = {
+		fontSize: "24px",
+		color: "#fff",
+		marginLeft: "20px",
+		cursor: "pointer",
 	};
-
 	return (
-		<nav className="navbar navbar-expand-lg" style={navbarStyle}>
-			{/* <Link to="/">
-				<img src="" alt="ElectroNova Systems Logo" style={mainLogoStyle} />
-			</Link> */}
-			<button
-				className="navbar-toggler"
-				type="button"
-				data-toggle="collapse"
-				data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent"
-				aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span className="navbar-toggler-icon"></span>
-			</button>
-			<div className="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul className="navbar-nav mx-auto">
-					<li className="nav-item">
-						<Link className="nav-link" to="/about" style={navLinkStyle}>
-							About
-						</Link>
-					</li>
+		<>
+			<nav className="navbar navbar-expand-lg" style={navbarStyle}>
+				&ensp;
+				<Link to="/">
+					<img
+						src={logo}
+						alt="ElectroNova Systems logo"
+						style={mainLogoStyle}
+					/>
+				</Link>
+				<button
+					className="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span className="navbar-toggler-icon"></span>
+				</button>
+				<div className="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
+						<li className="nav-item">
+							<Link
+								className="nav-link active"
+								aria-current="page"
+								to="/about"
+								style={navLinkStyle}>
+								&ensp;About
+							</Link>
+						</li>
 
-					{/* <li className="nav-item">
-						<Link className="nav-link" to="/blogs" style={navLinkStyle}>
-							Blogs
-						</Link>
-					</li> */}
-
-					{/* <li className="nav-item dropdown">
+						<li className="nav-item">
+							<Link className="nav-link" to="/products" style={navLinkStyle}>
+								Products
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link className="nav-link" to="/contact-us" style={navLinkStyle}>
+								Contact
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link
+								className="nav-link"
+								to="/our-achievements"
+								style={navLinkStyle}>
+								Achievements
+							</Link>
+						</li>
+						<li className="nav-item">
+							<Link
+								className="nav-link"
+								to="/training-kits"
+								style={navLinkStyle}>
+								Training Kits
+							</Link>
+						</li>
+					</ul>
+					<div className="d-flex">
 						<Link
-							className="nav-link dropdown-toggle"
-							to="/"
-							role="button"
-							data-toggle="dropdown"
-							style={navLinkStyle}>
-							Recommendations&ensp;&ensp;
+							to="mailto:electronovasystemspvtltd@gmail.com"
+							target="_blank"
+							rel="noreferrer">
+							<i className="fa-regular fa-envelope" style={iconStyle}></i>
 						</Link>
-						<div className="dropdown-menu">
-							<Link className="dropdown-item" to="/books" style={navLinkStyle}>
-								Books
-							</Link>
-							<Link className="dropdown-item" to="/videos" style={navLinkStyle}>
-								Videos
-							</Link>
-							<Link className="dropdown-item" to="/movies" style={navLinkStyle}>
-								Movies
-							</Link>
-						</div>
-					</li> */}
-
-					<li className="nav-item">
-						<Link className="nav-link" to="/connect" style={navLinkStyle}>
-							Connect
+						&ensp;&ensp;
+						<Link
+							to="https://www.linkedin.com/company/electronova-systems-pvt-ltd"
+							target="_blank"
+							rel="noreferrer">
+							<i className="fa-brands fa-linkedin" style={iconStyle}></i>
 						</Link>
-					</li>
-
-					{/* <li className="nav-item">
-						<Link className="nav-link" to="/submit-here" style={navLinkStyle}>
-							Submit your work
+						&ensp;&ensp;
+						<Link
+							to="https://www.instagram.com/electronovasystem/"
+							target="_blank"
+							rel="noreferrer">
+							<i className="fa-brands fa-instagram" style={iconStyle}></i>
 						</Link>
-					</li> */}
-				</ul>
-			</div>
-		</nav>
+						&ensp;&ensp;
+						<Link to="https://twitter.com" target="_blank" rel="noreferrer">
+							<i className="fa-brands fa-x-twitter" style={iconStyle}></i>
+						</Link>
+						&ensp;&ensp;
+					</div>
+				</div>
+			</nav>
+		</>
 	);
 }
 
 export default Navbar;
+
