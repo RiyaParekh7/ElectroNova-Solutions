@@ -4,10 +4,11 @@ import logo from "./images/ElectroNova_logo_trial.png";
 
 function Navbar() {
 	const navbarStyle = {
+		// backgroundColor: "#3C4858",
 		backgroundColor: "transparent",
-		padding: "20px 30px",
+		padding: "15px 30px",
 		fontFamily: "Georgia, serif",
-		position: "absolute",
+		position: "fixed",
 		top: "0",
 		left: "0",
 		width: "100%",
@@ -16,8 +17,9 @@ function Navbar() {
 
 	const mainLogoStyle = {
 		height: "125px",
+		height: "125px",
 		width: "auto",
-		borderRadius: "5px",
+		borderRadius: "0px",
 	};
 
 	const navLinkStyle = {
