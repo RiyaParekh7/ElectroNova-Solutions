@@ -3,20 +3,15 @@ import { Link } from "react-router-dom";
 import mainImg1 from "./images/mainImg1.png";
 import mainImg2 from "./images/mainImg2.png";
 import mainImg3 from "./images/mainImg3.png";
+import bgImg from "./images/background_img.jpg";
 
 function MainApp() {
-	const heroStyle = {
-		display: "grid",
-		gridTemplateColumns: "1.2fr 1fr",
-		alignItems: "center",
-		padding: "120px 10%",
-		gap: "60px",
+	const sectionStyle = {
+		background: `radial-gradient(circle at top right, rgba(30,58,138,0.9), rgba(2,6,23,0.95)), url(${bgImg})`,
+		backgroundSize: "cover",
+		backgroundPosition: "center",
+		backgroundRepeat: "no-repeat",
 		color: "white",
-		background: "radial-gradient(circle at top right, #1e3a8a, #020617)",
-	};
-
-	const leftStyle = {
-		maxWidth: "550px",
 	};
 
 	const headingStyle = {
@@ -43,35 +38,28 @@ function MainApp() {
 		marginTop: "30px",
 		display: "flex",
 		gap: "15px",
+		flexWrap: "wrap",
 	};
 
 	const primaryBtn = {
 		background: "#3b82f6",
-		fontFamily: "Inter",
-
 		border: "none",
 		padding: "12px 20px",
 		borderRadius: "8px",
 		color: "white",
 		cursor: "pointer",
 		fontWeight: "500",
+		fontFamily: "Inter",
 	};
 
 	const secondaryBtn = {
 		background: "transparent",
-		fontFamily: "Inter",
-
 		border: "1px solid #3b82f6",
 		padding: "12px 20px",
 		borderRadius: "8px",
 		color: "#3b82f6",
 		cursor: "pointer",
-	};
-
-	const rightStyle = {
-		display: "flex",
-		justifyContent: "center",
-		marginTop: "20px",
+		fontFamily: "Inter",
 	};
 
 	const imageWrapper = {
@@ -79,83 +67,91 @@ function MainApp() {
 		padding: "20px",
 		borderRadius: "20px",
 		backdropFilter: "blur(10px)",
-	};
-	const secondaryHeads = {
-		fontFamily: "Orbitron",
-	};
-	const imageStyle = {
-		width: "400px",
-		maxWidth: "100%",
-		borderRadius: "12px",
-		marginBottom: "50px",
-		filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.6))",
+		display: "inline-block",
 	};
 
-	const para = {
-		fontSize: "18px",
-		wordSpacing: "5px",
-		fontFamily: "Inter",
-	};
 	return (
-		<div style={heroStyle}>
-			<div style={leftStyle}>
-				<h1 style={headingStyle}>ELECTRONOVA SYSTEMS</h1>
+		<div className="container-fluid" style={sectionStyle}>
+			<div className="container py-5" style={{ paddingTop: "110px" }}>
+				<div className="row align-items-center my-5">
+					<div className="col-12 col-md-6 text-center text-md-start">
+						<h1 style={headingStyle}>ELECTRONOVA SYSTEMS</h1>
 
-				<h3 style={subHeadingStyle}>
-					Engineering smart electronics and IoT solutions for a connected future
-				</h3>
+						<h3 style={subHeadingStyle}>
+							Engineering smart electronics and IoT solutions for a connected
+							future
+						</h3>
 
-				<p style={paragraphStyle}>
-					Building reliable electronic solutions with modern technology. Focused
-					on innovation, functionality and real-world applications.
-				</p>
+						<p style={paragraphStyle}>
+							Building reliable electronic solutions with modern technology.
+							Focused on innovation, functionality and real-world applications.
+						</p>
 
-				<div style={buttonContainer}>
-					<Link to="/products">
-						<button style={primaryBtn}>Explore Products</button>
-					</Link>
-					<Link to="/about">
-						<button style={secondaryBtn}>Learn More</button>{" "}
-					</Link>
+						<div style={buttonContainer}>
+							<Link to="/products">
+								<button style={primaryBtn}>Explore Products</button>
+							</Link>
+
+							<Link to="/about">
+								<button style={secondaryBtn}>Learn More</button>
+							</Link>
+						</div>
+					</div>
+
+					<div className="col-12 col-md-6 text-center mt-4 mt-md-0">
+						<div style={imageWrapper}>
+							<img
+								src={mainImg1}
+								className="img-fluid"
+								alt="Electronics visual"
+							/>
+						</div>
+					</div>
+				</div>
+
+				<div className="row my-5 align-items-center">
+					<div className="col-12 col-md-6 text-center">
+						<div style={imageWrapper}>
+							<img src={mainImg2} className="img-fluid" alt="Visual 2" />
+						</div>
+					</div>
+
+					<div className="col-12 col-md-6 text-center text-md-start mt-4 mt-md-0">
+						<h1 style={{ fontFamily: "Orbitron" }}>What We Do</h1>
+						<br />
+						<p style={paragraphStyle}>
+							At Electronova System, we design and deliver innovative learning
+							solutions that bring technology and creativity together. Our focus
+							is on empowering students, educators, and institutions through
+							advanced educational tools, training, and infrastructure in the
+							fields of Robotics, AI, IoT, STEM & STEAM Education.
+						</p>
+					</div>
+				</div>
+
+				<div className="row my-5 align-items-center">
+					<div className="col-12 col-md-6 text-center text-md-start">
+						<h1 style={{ fontFamily: "Orbitron" }}>Why Us?</h1>
+						<br />
+						<p style={paragraphStyle}>
+							Electronova System stands out for its commitment to innovation,
+							quality, and hands on learning. We offer complete Robotics, AI,
+							IoT, STEM & STEAM education solutions — from lab setup to training
+							and certification. With expert trainers, industry-driven
+							curriculum, and durable learning kits, we ensure students gain
+							practical, future-ready skills. Our strong partnerships with
+							private, government, and Atal Tinkering Labs reflect our
+							reliability and excellence in delivering impactful education.
+						</p>
+					</div>
+
+					<div className="col-12 col-md-6 text-center mt-4 mt-md-0">
+						<div style={imageWrapper}>
+							<img src={mainImg3} className="img-fluid" alt="Visual 3" />
+						</div>
+					</div>
 				</div>
 			</div>
-			<div style={rightStyle}>
-				<div style={imageWrapper}>
-					<img src={mainImg1} alt="Electronics visual" style={imageStyle} />
-				</div>
-			</div>
-			<div style={rightStyle}>
-				<img src={mainImg2} alt="" style={imageStyle} />
-			</div>
-			<div style={leftStyle}>
-				<h1 style={secondaryHeads}>What We Do</h1>
-				<br />
-				<p style={para}>
-					At Electronova System, we design and deliver innovative learning
-					solutions that bring technology and creativity together. Our focus is
-					on empowering students, educators, and institutions through advanced
-					educational tools, training, and infrastructure in the fields of
-					Robotics, AI, IoT, STEM & STEAM Education
-				</p>
-			</div>
-			<div style={rightStyle}>
-				<img src={mainImg3} alt="" style={imageStyle} />
-			</div>
-			<div style={leftStyle}>
-				<h1 style={secondaryHeads}>Why Us?</h1>
-				<br />
-				<p style={para}>
-					lectronova System stands out for its commitment to innovation,
-					quality, and handson learning. We offer complete Robotics, AI, IoT,
-					STEM & STEAM education solutions — from lab setup to training and
-					certification. With expert trainers, industry-driven curriculum, and
-					durable learning kits, we ensure students gain practical, future-ready
-					skills. Our strong partnerships with private, government, and Atal
-					Tinkering Labs reflect our reliability and excellence in delivering
-					impactful education.
-				</p>
-			</div>
-			//services //testimonials ask them for //mobile responsiveness
 		</div>
 	);
 }
